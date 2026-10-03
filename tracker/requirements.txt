@@ -1,0 +1,4 @@
+# rknn-toolkit-lite2 is published by Rockchip (rockchip-linux/rknn-toolkit2); if pip cannot resolve it, install the 2.3.2 aarch64 wheel from that release.
+numpy==1.26.4
+opencv-python==4.11.0.86
+rknn-toolkit-lite2==2.3.2

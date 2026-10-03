@@ -1,0 +1,8 @@
+# rknn-toolkit2 is published by Rockchip (rockchip-linux/rknn-toolkit2); if pip cannot resolve it, install the 2.3.2 wheel from that release.
+numpy==1.26.4
+torch==2.2.0
+onnx==1.16.1
+onnxruntime==1.26.0
+opencv-python==4.11.0.86
+rknn-toolkit2==2.3.2
+git+https://github.com/facebookresearch/mobile-vision.git@51804a6873ae1029257cf652179c960cceeecc75  # FBNet backbone code, CC BY-NC 4.0, installed separately, not redistributed

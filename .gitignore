@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv*/
+*.egg-info/
+
+# Native build products (build on the board with tracker/build_*.sh)
+*.so
+*.so.new
+*.tmp.so
+native_bench/
+
+# Run outputs and conversion intermediates
+out/
+outputs/
+results/
+calibration/
+*.onnx
+*.log
+*.npy
+*.f32
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

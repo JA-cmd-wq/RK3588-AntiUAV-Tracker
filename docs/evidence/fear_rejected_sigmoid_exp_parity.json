@@ -1,0 +1,348 @@
+{
+  "identity": "Exp(x) = Reciprocal(Sigmoid(Neg(x))) - 1",
+  "exp_replaced": 1,
+  "weights_changed": false,
+  "activation_weights_changed": false,
+  "samples": [
+    {
+      "id": "official_1",
+      "outputs": [
+        {
+          "cosine": 0.9999999999992425,
+          "max_abs": 0.0002288818359375,
+          "mean_abs": 8.356522305641607e-06,
+          "relative_l2": 1.2940181822549668e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_7",
+      "outputs": [
+        {
+          "cosine": 0.9999999999992065,
+          "max_abs": 0.0002593994140625,
+          "mean_abs": 9.156709307151824e-06,
+          "relative_l2": 1.262328990598983e-06
+        },
+        {
+          "cosine": 0.9999999999999998,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_14",
+      "outputs": [
+        {
+          "cosine": 0.9999999999989972,
+          "max_abs": 0.00028228759765625,
+          "mean_abs": 8.706129353326479e-06,
+          "relative_l2": 1.4255980469255428e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_20",
+      "outputs": [
+        {
+          "cosine": 0.9999999999991317,
+          "max_abs": 0.00026702880859375,
+          "mean_abs": 8.457547656919723e-06,
+          "relative_l2": 1.3191997911173024e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_27",
+      "outputs": [
+        {
+          "cosine": 0.9999999999991981,
+          "max_abs": 0.00023651123046875,
+          "mean_abs": 8.635467239861278e-06,
+          "relative_l2": 1.2670637857843323e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_34",
+      "outputs": [
+        {
+          "cosine": 0.9999999999988647,
+          "max_abs": 0.00031280517578125,
+          "mean_abs": 9.461099814474933e-06,
+          "relative_l2": 1.5072452295510328e-06
+        },
+        {
+          "cosine": 1.0000000000000002,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_40",
+      "outputs": [
+        {
+          "cosine": 0.999999999999111,
+          "max_abs": 0.000396728515625,
+          "mean_abs": 9.11858700440929e-06,
+          "relative_l2": 1.3488565882701004e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_47",
+      "outputs": [
+        {
+          "cosine": 0.9999999999990112,
+          "max_abs": 0.0002899169921875,
+          "mean_abs": 8.507005660993855e-06,
+          "relative_l2": 1.4163776345957999e-06
+        },
+        {
+          "cosine": 1.0000000000000002,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_54",
+      "outputs": [
+        {
+          "cosine": 0.9999999999991896,
+          "max_abs": 0.00028228759765625,
+          "mean_abs": 9.187483648903606e-06,
+          "relative_l2": 1.2993123018908631e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_60",
+      "outputs": [
+        {
+          "cosine": 0.9999999999991673,
+          "max_abs": 0.000274658203125,
+          "mean_abs": 9.161394518786281e-06,
+          "relative_l2": 1.3127924531910203e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_67",
+      "outputs": [
+        {
+          "cosine": 0.9999999999991539,
+          "max_abs": 0.0002899169921875,
+          "mean_abs": 8.978368365220035e-06,
+          "relative_l2": 1.302820118289833e-06
+        },
+        {
+          "cosine": 0.9999999999999998,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_74",
+      "outputs": [
+        {
+          "cosine": 0.9999999999992559,
+          "max_abs": 0.00026702880859375,
+          "mean_abs": 6.801107972964626e-06,
+          "relative_l2": 1.220318740582816e-06
+        },
+        {
+          "cosine": 0.9999999999999998,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_80",
+      "outputs": [
+        {
+          "cosine": 0.9999999999990672,
+          "max_abs": 0.00025177001953125,
+          "mean_abs": 8.424223755180982e-06,
+          "relative_l2": 1.3730783644856064e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_87",
+      "outputs": [
+        {
+          "cosine": 0.9999999999991157,
+          "max_abs": 0.0003509521484375,
+          "mean_abs": 8.048112169983454e-06,
+          "relative_l2": 1.3349718987707698e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_94",
+      "outputs": [
+        {
+          "cosine": 0.9999999999988872,
+          "max_abs": 0.00038909912109375,
+          "mean_abs": 8.828613225793716e-06,
+          "relative_l2": 1.50136591325356e-06
+        },
+        {
+          "cosine": 0.9999999999999998,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_100",
+      "outputs": [
+        {
+          "cosine": 0.9999999999990933,
+          "max_abs": 0.000244140625,
+          "mean_abs": 8.59960053207012e-06,
+          "relative_l2": 1.3473381146307818e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_107",
+      "outputs": [
+        {
+          "cosine": 0.999999999999163,
+          "max_abs": 0.000213623046875,
+          "mean_abs": 8.794593804457398e-06,
+          "relative_l2": 1.297085762680198e-06
+        },
+        {
+          "cosine": 1.0000000000000002,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_114",
+      "outputs": [
+        {
+          "cosine": 0.9999999999990478,
+          "max_abs": 0.00029754638671875,
+          "mean_abs": 8.463776697638947e-06,
+          "relative_l2": 1.380812060759667e-06
+        },
+        {
+          "cosine": 0.9999999999999998,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_120",
+      "outputs": [
+        {
+          "cosine": 0.9999999999992618,
+          "max_abs": 0.00023651123046875,
+          "mean_abs": 7.1520922128830156e-06,
+          "relative_l2": 1.2356003999617345e-06
+        },
+        {
+          "cosine": 1.0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "official_127",
+      "outputs": [
+        {
+          "cosine": 0.9999999999991203,
+          "max_abs": 0.000274658203125,
+          "mean_abs": 7.881975596872766e-06,
+          "relative_l2": 1.329704740194819e-06
+        },
+        {
+          "cosine": 0.9999999999999999,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ]
+    }
+  ]
+}

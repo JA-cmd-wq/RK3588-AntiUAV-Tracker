@@ -1,0 +1,94 @@
+{
+  "template": {
+    "ops": {
+      "Constant": 1,
+      "Div": 2,
+      "Sub": 1,
+      "Conv": 47,
+      "Relu": 30,
+      "Add": 12
+    },
+    "inputs": {
+      "template": [
+        1,
+        3,
+        128,
+        128
+      ]
+    },
+    "outputs": {
+      "template_features": [
+        1,
+        256,
+        8,
+        8
+      ]
+    },
+    "pytorch_onnx": [
+      {
+        "cosine": 0.9999999999994198,
+        "max_abs": 4.410743713378906e-06,
+        "mean_abs": 7.272162804716764e-07,
+        "relative_l2": 1.0668327443726793e-06
+      }
+    ]
+  },
+  "search": {
+    "ops": {
+      "Constant": 7,
+      "Div": 2,
+      "Sub": 1,
+      "Conv": 67,
+      "Relu": 38,
+      "Add": 13,
+      "Reshape": 5,
+      "Transpose": 1,
+      "MatMul": 2,
+      "Concat": 2,
+      "Mul": 2,
+      "Exp": 1
+    },
+    "inputs": {
+      "search": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "template_features": [
+        1,
+        256,
+        8,
+        8
+      ]
+    },
+    "outputs": {
+      "bbox": [
+        1,
+        4,
+        16,
+        16
+      ],
+      "cls": [
+        1,
+        1,
+        16,
+        16
+      ]
+    },
+    "pytorch_onnx": [
+      {
+        "cosine": 0.9999999999990107,
+        "max_abs": 0.00032806396484375,
+        "mean_abs": 1.2827024875150528e-05,
+        "relative_l2": 1.4080346475579566e-06
+      },
+      {
+        "cosine": 0.9999999999997812,
+        "max_abs": 1.621246337890625e-05,
+        "mean_abs": 4.201887350063771e-06,
+        "relative_l2": 6.725889986910268e-07
+      }
+    ]
+  }
+}
