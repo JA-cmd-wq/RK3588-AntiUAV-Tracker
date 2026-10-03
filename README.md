@@ -70,16 +70,15 @@ RK3588 的 NPU 有三个核：核 0、核 1、核 2，每个核可以单独跑�
 | 核 1 | FEAR（template + search） | 每帧都要用上一帧的结果，只能一帧接一帧地跑 |
 | 核 2 | YOLO 实例 2 | 同核 0 |
 
-<p>
-<img src="assets/charts/fps_bar.svg" width="49%" alt="FPS">
-<img src="assets/charts/latency_bar.svg" width="49%" alt="单次耗时">
-</p>
+<img src="assets/charts/fps_bar.svg" width="100%" alt="FPS">
+
+<img src="assets/charts/latency_ms.svg" width="100%" alt="单次耗时">
 
 - **YOLO + Kalman 帧率最高**：两个 YOLO 实例在核 0、核 2 上并行
 - **FEAR 单次 8.0 ms，其中纯 NPU 只有 2.45 ms**：其余是裁图和调用开销，后续改成全 C++ 来压缩
 - **三合一最慢**：FEAR 之外还要调度 YOLO 复核
 
-<img src="assets/charts/npu_load.svg" width="100%" alt="NPU 逐核利用率">
+<img src="assets/charts/npu_cores.svg" width="100%" alt="NPU 逐核利用率">
 
 - **YOLO + Kalman**：核 0、核 2 各约 70%，核 1 空闲
 - **FEAR + Kalman**：只有核 1 在跑，约 60%。FEAR 是串行的，想再快，得先压缩裁图和调用开销
