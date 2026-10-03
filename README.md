@@ -60,25 +60,30 @@
 
 完整对比视频（原分辨率、全长）在 [assets/videos/](assets/videos/)。
 
-### 速度
+## 速度与 NPU 占用
+
+RK3588 的 NPU 有三个核：核 0、核 1、核 2，每个核可以单独跑一个模型。本项目的分工如下：
+
+| NPU 核 | 跑什么 | 说明 |
+|---|---|---|
+| 核 0 | YOLO 实例 1 | 两个 YOLO 实例并行处理不同的帧，互不等待 |
+| 核 1 | FEAR（template + search） | 每帧都要用上一帧的结果，只能一帧接一帧地跑 |
+| 核 2 | YOLO 实例 2 | 同核 0 |
 
 <p>
 <img src="assets/charts/fps_bar.svg" width="49%" alt="FPS">
 <img src="assets/charts/latency_bar.svg" width="49%" alt="单次耗时">
 </p>
 
-- YOLO 的两个实例分别在核 0 和核 2 上异步运行，所以 YOLO + Kalman 帧率最高
-- FEAR 每帧都依赖上一帧的结果，只能在核 1 上串行。流水线里每次约 8 ms，其中纯 NPU 2.45 ms，其余是裁图和调用开销
-- 三合一在 FEAR 之外还要调度 YOLO 复核，所以比单用 FEAR 慢一些
-- 测 FPS 时板上还有另一个业务进程在占用 NPU
-
-**NPU 利用率**（夜空片段，逐核采样；采样时另一个业务进程没有占用 NPU）
+- **YOLO + Kalman 帧率最高**：两个 YOLO 实例在核 0、核 2 上并行
+- **FEAR 单次 8.0 ms，其中纯 NPU 只有 2.45 ms**：其余是裁图和调用开销，后续改成全 C++ 来压缩
+- **三合一最慢**：FEAR 之外还要调度 YOLO 复核
 
 <img src="assets/charts/npu_load.svg" width="100%" alt="NPU 逐核利用率">
 
-- YOLO + Kalman：两个 YOLO 实例把核 0、核 2 各跑到约 70%
-- FEAR + Kalman：FEAR 每帧都要等上一帧的结果，只能串行，核 1 稳定在约 60%。要再快，得先压缩裁图和调用开销
-- 三合一：YOLO 每 15 帧才复核一次，核 0、核 2 只用了 1%～6%。NPU 余量还很大，可以用来跟踪多个目标或接多路相机
+- **YOLO + Kalman**：核 0、核 2 各约 70%，核 1 空闲
+- **FEAR + Kalman**：只有核 1 在跑，约 60%。FEAR 是串行的，想再快，得先压缩裁图和调用开销
+- **三合一**：核 1 约 60%。YOLO 每 15 帧才复核一次，核 0、核 2 只用了 1%～6%。NPU 余量还很大，可以用来同时跟多个目标或接多路相机
 
 ## 融合规则里最关键的两条
 
@@ -153,9 +158,13 @@ docs/             FEAR 改动明细、流水线和状态机设计、测速记录
 
 ## 已知局限
 
-- 这版 YOLO 偏重远处小目标，**近处的大无人机反而检不到**；画面里目标很大时，主要靠 FEAR 来跟
+- 这版 YOLO 训练数据有限，偏重远处小目标，**近处的大无人机反而检不到**；画面里目标很大时，主要靠 FEAR 来跟。想要更好的效果，见下一节自己训练
 - FEAR + Kalman 跟丢后不会自己找回，需要 YOLO 或人工重新给框
 - 现在是 Python 调度 + C++ 推理。FEAR 纯 NPU 2.45 ms，流水线里每次约 8 ms，多出来的是裁图、调用和格式转换开销，后续改成全 C++ 和 NPU 原生输入格式来压缩
+
+## 用自己的数据训练 YOLO
+
+仓库里的 YOLO 训练数据有限、效果一般，想要更好的效果，可以用自己场景的数据（远近、昼夜、不同背景，只标 `drone` 一类）在 [airockchip/ultralytics_yolov8](https://github.com/airockchip/ultralytics_yolov8) 上训练 640×640 的 YOLOv8n，用 `yolo export format=rknn` 导出 ONNX，再用 [rknn_model_zoo](https://github.com/airockchip/rknn_model_zoo) 的 `convert.py` 转成 INT8 RKNN，覆盖 `models/yolo/drone_yolov8n_int8.rknn` 或运行时加 `--yolo-model 你的模型.rknn` 即可，跟踪部分不用改。
 
 ## 测试视频说明
 
